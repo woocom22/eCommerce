@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\admincontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'App\Http\Controllers\HomeController@home')->name('home');
+Route::get('/dashboard', 'App\Http\Controllers\admincontroller@dashboard')->name('dashboard');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
