@@ -28,3 +28,14 @@ Route::get('/dashboard', 'App\Http\Controllers\admincontroller@dashboard')->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+
+Route::group(['middleware' => 'auth', 'admin'], function(){
+    Route::get('/dashboard/category', 'App\Http\Controllers\CategoryController@category')->name('category.category');
+    Route::get('/dashboard/category/create', 'App\Http\Controllers\CategoryController@create')->name('category.create');
+    Route::post('/dashboard/category/store', 'App\Http\Controllers\CategoryController@store')->name('category.store');
+    Route::get('/dashboard/category/delete/{id}', 'App\Http\Controllers\CategoryController@delete')->name('category.delete');
+    Route::get('/dashboard/category/edit/{id}', 'App\Http\Controllers\CategoryController@edit')->name('category.edit');
+    Route::post('/dashboard/category/update', 'App\Http\Controllers\CategoryController@update')->name('category.update');
+
+});
