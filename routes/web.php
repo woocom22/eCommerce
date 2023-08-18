@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Livewire\Admin\Brand\Index;
 use App\Http\Controllers\admincontroller;
+use App\Http\Controllers\Brandcontroller;
+use App\Http\Controllers\BrandShowcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +30,6 @@ Route::get('/dashboard', 'App\Http\Controllers\admincontroller@dashboard')->name
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
 
 Route::group(['middleware' => 'auth', 'admin'], function(){
@@ -37,5 +39,8 @@ Route::group(['middleware' => 'auth', 'admin'], function(){
     Route::get('/dashboard/category/delete/{id}', 'App\Http\Controllers\CategoryController@delete')->name('category.delete');
     Route::get('/dashboard/category/edit/{id}', 'App\Http\Controllers\CategoryController@edit')->name('category.edit');
     Route::post('/dashboard/category/update', 'App\Http\Controllers\CategoryController@update')->name('category.update');
+
+    // For Brand
+    Route::get('/dashboard/brand', 'App\Http\Controllers\BrandShowcontroller@index')->name('brand.index');
 
 });

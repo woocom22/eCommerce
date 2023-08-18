@@ -1,22 +1,14 @@
- <!-- General JS Scripts -->
-  <script src="{{ asset('admin/assets/modules/jquery.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/modules/popper.js') }}"></script>
-  <script src="{{ asset('admin/assets/modules/tooltip.js') }}"></script>
-  <script src="{{ asset('admin/assets/modules/bootstrap/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/modules/moment.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/js/stisla.js') }}"></script>
+<script src="{{ asset('admin/assets/js/jquery-3.7.0.min.js') }}"></script>
+<script src="{{ asset('admin/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/chart.js/chart.umd.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/echarts/echarts.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/quill/quill.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ asset('admin/assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('admin/assets/js/toastr.min.js') }}"></script>
 
-  <!-- JS Libraies -->
-  <script src="{{ asset('admin/assets/modules/jquery.sparkline.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/modules/chart.min.j') }}s"></script>
-  <script src="{{ asset('admin/assets/modules/owlcarousel2/dist/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('admin/assets/modules/summernote/summernote-bs4.js') }}"></script>
-  <script src="{{ asset('admin/assets/modules/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
-
-  <!-- Page Specific JS File -->
-  <script src="{{ asset('admin/assets/js/page/index.js') }}"></script>
-
-  <!-- Template JS File -->
-  <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
-  <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
+  <!-- Template Main JS File -->
+  <script src="{{ asset('admin/assets/js/main.js') }}"></script>
+@livewireScripts

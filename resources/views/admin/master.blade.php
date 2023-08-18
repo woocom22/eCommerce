@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
+
 @include('admin.inc.head')
 
 <body>
-  <div id="app">
-    <div class="main-wrapper main-wrapper-1">
-      <div class="navbar-bg"></div>
-        @include('admin.inc.header')
-        @include('admin.inc.sidebar')
 
-      <!-- Main Content -->
-      @yield('content')
-      @include('admin.inc.footer')
-    </div>
-  </div>
+  <!-- ======= Header ======= -->
+    @include('admin.inc.header')
+  <!-- End Header -->
 
- @include('admin.inc.adminJs')
+  <!-- ======= Sidebar ======= -->
+    @include('admin.inc.sidebar')
+  <!-- End Sidebar-->
+  <main id="main" class="main">
+    @yield('content')
+      </main>
+ <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+    @include('admin.inc.footer')
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  @include('admin.inc.adminJs')
+  @yield('script')
+
 </body>
+
 </html>

@@ -1,223 +1,231 @@
-<nav class="navbar navbar-expand-lg main-navbar">
-        <form class="form-inline mr-auto">
-          <ul class="navbar-nav mr-3">
-            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
-          </ul>
-          <div class="search-element">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
-            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-            <div class="search-backdrop"></div>
-            <div class="search-result">
-              <div class="search-header">
-                Histories
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
               </div>
-              <div class="search-item">
-                <a href="#">How to hack NASA using CSS</a>
-                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
               </div>
-              <div class="search-item">
-                <a href="#">Kodinger.com</a>
-                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
               </div>
-              <div class="search-item">
-                <a href="#">#Stisla</a>
-                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
               </div>
-              <div class="search-header">
-                Result
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <img class="mr-3 rounded" width="30" src="assets/img/products/product-3-50.png" alt="product">
-                  oPhone S9 Limited Edition
-                </a>
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <img class="mr-3 rounded" width="30" src="assets/img/products/product-2-50.png" alt="product">
-                  Drone X2 New Gen-7
-                </a>
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <img class="mr-3 rounded" width="30" src="assets/img/products/product-1-50.png" alt="product">
-                  Headphone Blitz
-                </a>
-              </div>
-              <div class="search-header">
-                Projects
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <div class="search-icon bg-danger text-white mr-3">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  Stisla Admin Template
-                </a>
-              </div>
-              <div class="search-item">
-                <a href="#">
-                  <div class="search-icon bg-primary text-white mr-3">
-                    <i class="fas fa-laptop"></i>
-                  </div>
-                  Create a new Homepage Design
-                </a>
-              </div>
-            </div>
-          </div>
-        </form>
-        <ul class="navbar-nav navbar-right">
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Messages
-                <div class="float-right">
-                  <a href="#">Mark All As Read</a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
                 </div>
-              </div>
-              <div class="dropdown-list-content dropdown-list-message">
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle">
-                    <div class="is-online"></div>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Kusnaedi</b>
-                    <p>Hello, Bro!</p>
-                    <div class="time">10 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-2.png" class="rounded-circle">
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Dedik Sugiharto</b>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-3.png" class="rounded-circle">
-                    <div class="is-online"></div>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Agung Ardiansyah</b>
-                    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-4.png" class="rounded-circle">
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Ardian Rahardiansyah</b>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                    <div class="time">16 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle">
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Alfa Zulkarnain</b>
-                    <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                    <div class="time">Yesterday</div>
-                  </div>
-                </a>
-              </div>
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
-          </li>
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Notifications
-                <div class="float-right">
-                  <a href="#">Mark All As Read</a>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
                 </div>
-              </div>
-              <div class="dropdown-list-content dropdown-list-icons">
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-icon bg-primary text-white">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    Template update is available now!
-                    <div class="time text-primary">2 Min Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-info text-white">
-                    <i class="far fa-user"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>You</b> and <b>Dedik Sugiharto</b> are now friends
-                    <div class="time">10 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-success text-white">
-                    <i class="fas fa-check"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-danger text-white">
-                    <i class="fas fa-exclamation-triangle"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    Low disk space. Let's clean it!
-                    <div class="time">17 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-info text-white">
-                    <i class="fas fa-bell"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    Welcome to Stisla template!
-                    <div class="time">Yesterday</div>
-                  </div>
-                </a>
-              </div>
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
-          </li>
-          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="{{ asset('admin/assets/img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">{{ Auth::user()->name }}</div></a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
-              <a href="features-profile.html" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Profile
               </a>
-              <a href="features-activities.html" class="dropdown-item has-icon">
-                <i class="fas fa-bolt"></i> Activities
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
               </a>
-              <a href="features-settings.html" class="dropdown-item has-icon">
-                <i class="fas fa-cog"></i> Settings
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>{{ Auth::user()->name }}</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
               </a>
-                <a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}"
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+               <a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>
+                                    document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-right"></i>
                     {{ __('Logout') }}
                 </a>
-
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
+            </li>
 
-            </div>
-          </li>
-        </ul>
-      </nav>
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header>

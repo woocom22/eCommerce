@@ -1,482 +1,650 @@
 @extends('admin.master')
 @section('content')
-    <div class="main-content">
-        <section class="section">
+
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-8">
           <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="card card-statistic-2">
-                <div class="card-stats">
-                  <div class="card-stats-title">Order Statistics -
-                    <div class="dropdown d-inline">
-                      <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="orders-month">August</a>
-                      <ul class="dropdown-menu dropdown-menu-sm">
-                        <li class="dropdown-title">Select Month</li>
-                        <li><a href="#" class="dropdown-item">January</a></li>
-                        <li><a href="#" class="dropdown-item">February</a></li>
-                        <li><a href="#" class="dropdown-item">March</a></li>
-                        <li><a href="#" class="dropdown-item">April</a></li>
-                        <li><a href="#" class="dropdown-item">May</a></li>
-                        <li><a href="#" class="dropdown-item">June</a></li>
-                        <li><a href="#" class="dropdown-item">July</a></li>
-                        <li><a href="#" class="dropdown-item active">August</a></li>
-                        <li><a href="#" class="dropdown-item">September</a></li>
-                        <li><a href="#" class="dropdown-item">October</a></li>
-                        <li><a href="#" class="dropdown-item">November</a></li>
-                        <li><a href="#" class="dropdown-item">December</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="card-stats-items">
-                    <div class="card-stats-item">
-                      <div class="card-stats-item-count">24</div>
-                      <div class="card-stats-item-label">Pending</div>
-                    </div>
-                    <div class="card-stats-item">
-                      <div class="card-stats-item-count">12</div>
-                      <div class="card-stats-item-label">Shipping</div>
-                    </div>
-                    <div class="card-stats-item">
-                      <div class="card-stats-item-count">23</div>
-                      <div class="card-stats-item-label">Completed</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-icon shadow-primary bg-primary">
-                  <i class="fas fa-archive"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Total Orders</h4>
-                  </div>
-                  <div class="card-body">
-                    59
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="card card-statistic-2">
-                <div class="card-chart">
-                  <canvas id="balance-chart" height="80"></canvas>
-                </div>
-                <div class="card-icon shadow-primary bg-primary">
-                  <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Balance</h4>
-                  </div>
-                  <div class="card-body">
-                    $187,13
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="card card-statistic-2">
-                <div class="card-chart">
-                  <canvas id="sales-chart" height="80"></canvas>
-                </div>
-                <div class="card-icon shadow-primary bg-primary">
-                  <i class="fas fa-shopping-bag"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Sales</h4>
-                  </div>
-                  <div class="card-body">
-                    4,732
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="card">
-                <div class="card-header">
-                  <h4>Budget vs Sales</h4>
-                </div>
-                <div class="card-body">
-                  <canvas id="myChart" height="158"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card gradient-bottom">
-                <div class="card-header">
-                  <h4>Top 5 Products</h4>
-                  <div class="card-header-action dropdown">
-                    <a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">Month</a>
-                    <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                      <li class="dropdown-title">Select Period</li>
-                      <li><a href="#" class="dropdown-item">Today</a></li>
-                      <li><a href="#" class="dropdown-item">Week</a></li>
-                      <li><a href="#" class="dropdown-item active">Month</a></li>
-                      <li><a href="#" class="dropdown-item">This Year</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-body" id="top-5-scroll">
-                  <ul class="list-unstyled list-unstyled-border">
-                    <li class="media">
-                      <img class="mr-3 rounded" width="55" src="assets/img/products/product-3-50.png" alt="product">
-                      <div class="media-body">
-                        <div class="float-right"><div class="font-weight-600 text-muted text-small">86 Sales</div></div>
-                        <div class="media-title">oPhone S9 Limited</div>
-                        <div class="mt-1">
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-primary" data-width="64%"></div>
-                            <div class="budget-price-label">$68,714</div>
-                          </div>
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-danger" data-width="43%"></div>
-                            <div class="budget-price-label">$38,700</div>
-                          </div>
-                        </div>
-                      </div>
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
                     </li>
-                    <li class="media">
-                      <img class="mr-3 rounded" width="55" src="assets/img/products/product-4-50.png" alt="product">
-                      <div class="media-body">
-                        <div class="float-right"><div class="font-weight-600 text-muted text-small">67 Sales</div></div>
-                        <div class="media-title">iBook Pro 2018</div>
-                        <div class="mt-1">
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-primary" data-width="84%"></div>
-                            <div class="budget-price-label">$107,133</div>
-                          </div>
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-danger" data-width="60%"></div>
-                            <div class="budget-price-label">$91,455</div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="media">
-                      <img class="mr-3 rounded" width="55" src="assets/img/products/product-1-50.png" alt="product">
-                      <div class="media-body">
-                        <div class="float-right"><div class="font-weight-600 text-muted text-small">63 Sales</div></div>
-                        <div class="media-title">Headphone Blitz</div>
-                        <div class="mt-1">
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-primary" data-width="34%"></div>
-                            <div class="budget-price-label">$3,717</div>
-                          </div>
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-danger" data-width="28%"></div>
-                            <div class="budget-price-label">$2,835</div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="media">
-                      <img class="mr-3 rounded" width="55" src="assets/img/products/product-3-50.png" alt="product">
-                      <div class="media-body">
-                        <div class="float-right"><div class="font-weight-600 text-muted text-small">28 Sales</div></div>
-                        <div class="media-title">oPhone X Lite</div>
-                        <div class="mt-1">
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-primary" data-width="45%"></div>
-                            <div class="budget-price-label">$13,972</div>
-                          </div>
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-danger" data-width="30%"></div>
-                            <div class="budget-price-label">$9,660</div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="media">
-                      <img class="mr-3 rounded" width="55" src="assets/img/products/product-5-50.png" alt="product">
-                      <div class="media-body">
-                        <div class="float-right"><div class="font-weight-600 text-muted text-small">19 Sales</div></div>
-                        <div class="media-title">Old Camera</div>
-                        <div class="mt-1">
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-primary" data-width="35%"></div>
-                            <div class="budget-price-label">$7,391</div>
-                          </div>
-                          <div class="budget-price">
-                            <div class="budget-price-square bg-danger" data-width="28%"></div>
-                            <div class="budget-price-label">$5,472</div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
                   </ul>
                 </div>
-                <div class="card-footer pt-3 d-flex justify-content-center">
-                  <div class="budget-price justify-content-center">
-                    <div class="budget-price-square bg-primary" data-width="20"></div>
-                    <div class="budget-price-label">Selling Price</div>
-                  </div>
-                  <div class="budget-price justify-content-center">
-                    <div class="budget-price-square bg-danger" data-width="20"></div>
-                    <div class="budget-price-label">Budget Price</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4>Best Products</h4>
-                </div>
+
                 <div class="card-body">
-                  <div class="owl-carousel owl-theme" id="products-carousel">
-                    <div>
-                      <div class="product-item pb-3">
-                        <div class="product-image">
-                          <img alt="image" src="assets/img/products/product-4-50.png" class="img-fluid">
-                        </div>
-                        <div class="product-details">
-                          <div class="product-name">iBook Pro 2018</div>
-                          <div class="product-review">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                          </div>
-                          <div class="text-muted text-small">67 Sales</div>
-                          <div class="product-cta">
-                            <a href="#" class="btn btn-primary">Detail</a>
-                          </div>
-                        </div>
-                      </div>
+                  <h5 class="card-title">Sales <span>| Today</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart"></i>
                     </div>
-                    <div>
-                      <div class="product-item">
-                        <div class="product-image">
-                          <img alt="image" src="assets/img/products/product-3-50.png" class="img-fluid">
-                        </div>
-                        <div class="product-details">
-                          <div class="product-name">oPhone S9 Limited</div>
-                          <div class="product-review">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half"></i>
-                          </div>
-                          <div class="text-muted text-small">86 Sales</div>
-                          <div class="product-cta">
-                            <a href="#" class="btn btn-primary">Detail</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="product-item">
-                        <div class="product-image">
-                          <img alt="image" src="assets/img/products/product-1-50.png" class="img-fluid">
-                        </div>
-                        <div class="product-details">
-                          <div class="product-name">Headphone Blitz</div>
-                          <div class="product-review">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                          </div>
-                          <div class="text-muted text-small">63 Sales</div>
-                          <div class="product-cta">
-                            <a href="#" class="btn btn-primary">Detail</a>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
                     </div>
                   </div>
                 </div>
+
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4>Top Countries</h4>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
                 </div>
+
                 <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="text-title mb-2">July</div>
-                      <ul class="list-unstyled list-unstyled-border list-unstyled-noborder mb-0">
-                        <li class="media">
-                          <img class="img-fluid mt-1 img-shadow" src="assets/modules/flag-icon-css/flags/4x3/id.svg" alt="image" width="40">
-                          <div class="media-body ml-3">
-                            <div class="media-title">Indonesia</div>
-                            <div class="text-small text-muted">3,282 <i class="fas fa-caret-down text-danger"></i></div>
-                          </div>
-                        </li>
-                        <li class="media">
-                          <img class="img-fluid mt-1 img-shadow" src="assets/modules/flag-icon-css/flags/4x3/my.svg" alt="image" width="40">
-                          <div class="media-body ml-3">
-                            <div class="media-title">Malaysia</div>
-                            <div class="text-small text-muted">2,976 <i class="fas fa-caret-down text-danger"></i></div>
-                          </div>
-                        </li>
-                        <li class="media">
-                          <img class="img-fluid mt-1 img-shadow" src="assets/modules/flag-icon-css/flags/4x3/us.svg" alt="image" width="40">
-                          <div class="media-body ml-3">
-                            <div class="media-title">United States</div>
-                            <div class="text-small text-muted">1,576 <i class="fas fa-caret-up text-success"></i></div>
-                          </div>
-                        </li>
-                      </ul>
+                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
                     </div>
-                    <div class="col-sm-6 mt-sm-0 mt-4">
-                      <div class="text-title mb-2">August</div>
-                      <ul class="list-unstyled list-unstyled-border list-unstyled-noborder mb-0">
-                        <li class="media">
-                          <img class="img-fluid mt-1 img-shadow" src="assets/modules/flag-icon-css/flags/4x3/id.svg" alt="image" width="40">
-                          <div class="media-body ml-3">
-                            <div class="media-title">Indonesia</div>
-                            <div class="text-small text-muted">3,486 <i class="fas fa-caret-up text-success"></i></div>
-                          </div>
-                        </li>
-                        <li class="media">
-                          <img class="img-fluid mt-1 img-shadow" src="assets/modules/flag-icon-css/flags/4x3/ps.svg" alt="image" width="40">
-                          <div class="media-body ml-3">
-                            <div class="media-title">Palestine</div>
-                            <div class="text-small text-muted">3,182 <i class="fas fa-caret-up text-success"></i></div>
-                          </div>
-                        </li>
-                        <li class="media">
-                          <img class="img-fluid mt-1 img-shadow" src="assets/modules/flag-icon-css/flags/4x3/de.svg" alt="image" width="40">
-                          <div class="media-body ml-3">
-                            <div class="media-title">Germany</div>
-                            <div class="text-small text-muted">2,317 <i class="fas fa-caret-down text-danger"></i></div>
-                          </div>
-                        </li>
-                      </ul>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
                     </div>
                   </div>
                 </div>
+
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-8">
+            </div><!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Customers <span>| This Year</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>1244</h6>
+                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+            <!-- Reports -->
+            <div class="col-12">
               <div class="card">
-                <div class="card-header">
-                  <h4>Invoices</h4>
-                  <div class="card-header-action">
-                    <a href="#" class="btn btn-danger">View More <i class="fas fa-chevron-right"></i></a>
-                  </div>
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
                 </div>
-                <div class="card-body p-0">
-                  <div class="table-responsive table-invoice">
-                    <table class="table table-striped">
-                      <tr>
-                        <th>Invoice ID</th>
-                        <th>Customer</th>
-                        <th>Status</th>
-                        <th>Due Date</th>
-                        <th>Action</th>
-                      </tr>
-                      <tr>
-                        <td><a href="#">INV-87239</a></td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td><div class="badge badge-warning">Unpaid</div></td>
-                        <td>July 19, 2018</td>
-                        <td>
-                          <a href="#" class="btn btn-primary">Detail</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">INV-48574</a></td>
-                        <td class="font-weight-600">Hasan Basri</td>
-                        <td><div class="badge badge-success">Paid</div></td>
-                        <td>July 21, 2018</td>
-                        <td>
-                          <a href="#" class="btn btn-primary">Detail</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">INV-76824</a></td>
-                        <td class="font-weight-600">Muhamad Nuruzzaki</td>
-                        <td><div class="badge badge-warning">Unpaid</div></td>
-                        <td>July 22, 2018</td>
-                        <td>
-                          <a href="#" class="btn btn-primary">Detail</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">INV-84990</a></td>
-                        <td class="font-weight-600">Agung Ardiansyah</td>
-                        <td><div class="badge badge-warning">Unpaid</div></td>
-                        <td>July 22, 2018</td>
-                        <td>
-                          <a href="#" class="btn btn-primary">Detail</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">INV-87320</a></td>
-                        <td class="font-weight-600">Ardian Rahardiansyah</td>
-                        <td><div class="badge badge-success">Paid</div></td>
-                        <td>July 28, 2018</td>
-                        <td>
-                          <a href="#" class="btn btn-primary">Detail</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Reports <span>/Today</span></h5>
+
+                  <!-- Line Chart -->
+                  <div id="reportsChart"></div>
+
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      new ApexCharts(document.querySelector("#reportsChart"), {
+                        series: [{
+                          name: 'Sales',
+                          data: [31, 40, 28, 51, 42, 82, 56],
+                        }, {
+                          name: 'Revenue',
+                          data: [11, 32, 45, 32, 34, 52, 41]
+                        }, {
+                          name: 'Customers',
+                          data: [15, 11, 32, 18, 9, 24, 11]
+                        }],
+                        chart: {
+                          height: 350,
+                          type: 'area',
+                          toolbar: {
+                            show: false
+                          },
+                        },
+                        markers: {
+                          size: 4
+                        },
+                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                        fill: {
+                          type: "gradient",
+                          gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.3,
+                            opacityTo: 0.4,
+                            stops: [0, 90, 100]
+                          }
+                        },
+                        dataLabels: {
+                          enabled: false
+                        },
+                        stroke: {
+                          curve: 'smooth',
+                          width: 2
+                        },
+                        xaxis: {
+                          type: 'datetime',
+                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                        },
+                        tooltip: {
+                          x: {
+                            format: 'dd/MM/yy HH:mm'
+                          },
+                        }
+                      }).render();
+                    });
+                  </script>
+                  <!-- End Line Chart -->
+
                 </div>
+
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-hero">
-                <div class="card-header">
-                  <div class="card-icon">
-                    <i class="far fa-question-circle"></i>
-                  </div>
-                  <h4>14</h4>
-                  <div class="card-description">Customers need help</div>
+            </div><!-- End Reports -->
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
                 </div>
-                <div class="card-body p-0">
-                  <div class="tickets-list">
-                    <a href="#" class="ticket-item">
-                      <div class="ticket-title">
-                        <h4>My order hasn't arrived yet</h4>
-                      </div>
-                      <div class="ticket-info">
-                        <div>Laila Tazkiah</div>
-                        <div class="bullet"></div>
-                        <div class="text-primary">1 min ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="ticket-item">
-                      <div class="ticket-title">
-                        <h4>Please cancel my order</h4>
-                      </div>
-                      <div class="ticket-info">
-                        <div>Rizal Fakhri</div>
-                        <div class="bullet"></div>
-                        <div>2 hours ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="ticket-item">
-                      <div class="ticket-title">
-                        <h4>Do you see my mother?</h4>
-                      </div>
-                      <div class="ticket-info">
-                        <div>Syahdan Ubaidillah</div>
-                        <div class="bullet"></div>
-                        <div>6 hours ago</div>
-                      </div>
-                    </a>
-                    <a href="features-tickets.html" class="ticket-item ticket-more">
-                      View All <i class="fas fa-chevron-right"></i>
-                    </a>
-                  </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#">#2457</a></th>
+                        <td>Brandon Jacob</td>
+                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                        <td>$64</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>Bridie Kessler</td>
+                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                        <td>$47</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2049</a></th>
+                        <td>Ashleigh Langosh</td>
+                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                        <td>$147</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Angus Grady</td>
+                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                        <td>$67</td>
+                        <td><span class="badge bg-danger">Rejected</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Raheem Lehner</td>
+                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
+                        <td>$165</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                 </div>
+
               </div>
-            </div>
+            </div><!-- End Recent Sales -->
+
+            <!-- Top Selling -->
+            <div class="col-12">
+              <div class="card top-selling overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body pb-0">
+                  <h5 class="card-title">Top Selling <span>| Today</span></h5>
+
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">Preview</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Sold</th>
+                        <th scope="col">Revenue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
+                        <td>$64</td>
+                        <td class="fw-bold">124</td>
+                        <td>$5,828</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
+                        <td>$46</td>
+                        <td class="fw-bold">98</td>
+                        <td>$4,508</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
+                        <td>$59</td>
+                        <td class="fw-bold">74</td>
+                        <td>$4,366</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
+                        <td>$32</td>
+                        <td class="fw-bold">63</td>
+                        <td>$2,016</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
+                        <td>$79</td>
+                        <td class="fw-bold">41</td>
+                        <td>$3,239</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Top Selling -->
+
           </div>
-        </section>
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+
+              <div class="activity">
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">32 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                  <div class="activity-content">
+                    Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">56 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptatem blanditiis blanditiis eveniet
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 hrs</div>
+                  <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptates corrupti molestias voluptatem
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">1 day</div>
+                  <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                  <div class="activity-content">
+                    Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 days</div>
+                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+                  <div class="activity-content">
+                    Est sit eum reiciendis exercitationem
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">4 weeks</div>
+                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
+                  <div class="activity-content">
+                    Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
+                  </div>
+                </div><!-- End activity item-->
+
+              </div>
+
+            </div>
+          </div><!-- End Recent Activity -->
+
+          <!-- Budget Report -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Budget Report <span>| This Month</span></h5>
+
+              <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
+                    legend: {
+                      data: ['Allocated Budget', 'Actual Spending']
+                    },
+                    radar: {
+                      // shape: 'circle',
+                      indicator: [{
+                          name: 'Sales',
+                          max: 6500
+                        },
+                        {
+                          name: 'Administration',
+                          max: 16000
+                        },
+                        {
+                          name: 'Information Technology',
+                          max: 30000
+                        },
+                        {
+                          name: 'Customer Support',
+                          max: 38000
+                        },
+                        {
+                          name: 'Development',
+                          max: 52000
+                        },
+                        {
+                          name: 'Marketing',
+                          max: 25000
+                        }
+                      ]
+                    },
+                    series: [{
+                      name: 'Budget vs spending',
+                      type: 'radar',
+                      data: [{
+                          value: [4200, 3000, 20000, 35000, 50000, 18000],
+                          name: 'Allocated Budget'
+                        },
+                        {
+                          value: [5000, 14000, 28000, 26000, 42000, 21000],
+                          name: 'Actual Spending'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div><!-- End Budget Report -->
+
+          <!-- Website Traffic -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
+
+              <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  echarts.init(document.querySelector("#trafficChart")).setOption({
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      top: '5%',
+                      left: 'center'
+                    },
+                    series: [{
+                      name: 'Access From',
+                      type: 'pie',
+                      radius: ['40%', '70%'],
+                      avoidLabelOverlap: false,
+                      label: {
+                        show: false,
+                        position: 'center'
+                      },
+                      emphasis: {
+                        label: {
+                          show: true,
+                          fontSize: '18',
+                          fontWeight: 'bold'
+                        }
+                      },
+                      labelLine: {
+                        show: false
+                      },
+                      data: [{
+                          value: 1048,
+                          name: 'Search Engine'
+                        },
+                        {
+                          value: 735,
+                          name: 'Direct'
+                        },
+                        {
+                          value: 580,
+                          name: 'Email'
+                        },
+                        {
+                          value: 484,
+                          name: 'Union Ads'
+                        },
+                        {
+                          value: 300,
+                          name: 'Video Ads'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div><!-- End Website Traffic -->
+
+          <!-- News & Updates Traffic -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
+
+              <div class="news">
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-1.jpg" alt="">
+                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
+                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-2.jpg" alt="">
+                  <h4><a href="#">Quidem autem et impedit</a></h4>
+                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-3.jpg" alt="">
+                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
+                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-4.jpg" alt="">
+                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>
+                  <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
+                </div>
+
+                <div class="post-item clearfix">
+                  <img src="assets/img/news-5.jpg" alt="">
+                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
+                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
+                </div>
+
+              </div><!-- End sidebar recent posts-->
+
+            </div>
+          </div><!-- End News & Updates -->
+
+        </div><!-- End Right side columns -->
+
       </div>
+    </section>
+
 
 @endsection

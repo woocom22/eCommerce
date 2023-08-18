@@ -2,9 +2,9 @@
 @section('content')
 <div class="main-content">
     <section class="section">
-        <div class="section-header">
+        <div class="section-header mt-2">
             <h1>Edit Category</h1>
-            <div class="section-header-breadcrumb">
+            <div class="section-header-breadcrumb d-flex mt-2">
                 <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a>
                 </div>
                 <div class="breadcrumb-item"><a href="{{ route('category.category')}}">Category</a></div>
@@ -17,7 +17,7 @@
 
             <div class="row">
                 <div class="col-12 col-md-12">
-                    <div class="card">
+                    <div class="card mt-2">
                         <form method="POST" action="{{ route('category.update')}}">
                             @csrf
                             <input type="hidden" value="{{ $model->id }}" name="id">

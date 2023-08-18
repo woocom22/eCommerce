@@ -1,142 +1,181 @@
-<div class="main-sidebar sidebar-style-2">
-        <aside id="sidebar-wrapper">
-          <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
-          </div>
-          <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
-          </div>
-          <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
-            <li class="dropdown active">
-              <a href="{{ route('dashboard')}}" class="nav-link "><i class="fas fa-fire"></i><span>Dashboard</span></a>
+ <aside id="sidebar" class="sidebar">
 
-            </li>
-            <li class="menu-header">Starter</li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Category</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('category.create')}}">Add Category</a></li>
-                <li><a class="nav-link" href="{{ route('category.category')}}">All Category</a></li>
-              </ul>
-            </li>
-            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
-                <li><a class="nav-link" href="bootstrap-badge.html">Badge</a></li>
-                <li><a class="nav-link" href="bootstrap-breadcrumb.html">Breadcrumb</a></li>
-                <li><a class="nav-link" href="bootstrap-buttons.html">Buttons</a></li>
-                <li><a class="nav-link" href="bootstrap-card.html">Card</a></li>
-                <li><a class="nav-link" href="bootstrap-carousel.html">Carousel</a></li>
-                <li><a class="nav-link" href="bootstrap-collapse.html">Collapse</a></li>
-                <li><a class="nav-link" href="bootstrap-dropdown.html">Dropdown</a></li>
-                <li><a class="nav-link" href="bootstrap-form.html">Form</a></li>
-                <li><a class="nav-link" href="bootstrap-list-group.html">List Group</a></li>
-                <li><a class="nav-link" href="bootstrap-media-object.html">Media Object</a></li>
-                <li><a class="nav-link" href="bootstrap-modal.html">Modal</a></li>
-                <li><a class="nav-link" href="bootstrap-nav.html">Nav</a></li>
-                <li><a class="nav-link" href="bootstrap-navbar.html">Navbar</a></li>
-                <li><a class="nav-link" href="bootstrap-pagination.html">Pagination</a></li>
-                <li><a class="nav-link" href="bootstrap-popover.html">Popover</a></li>
-                <li><a class="nav-link" href="bootstrap-progress.html">Progress</a></li>
-                <li><a class="nav-link" href="bootstrap-table.html">Table</a></li>
-                <li><a class="nav-link" href="bootstrap-tooltip.html">Tooltip</a></li>
-                <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
-              </ul>
-            </li>
-            <li class="menu-header">Stisla</li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Components</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="components-article.html">Article</a></li>                <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Avatar</a></li>                <li><a class="nav-link" href="components-chat-box.html">Chat Box</a></li>                <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">Empty State</a></li>                <li><a class="nav-link" href="components-gallery.html">Gallery</a></li>
-                <li><a class="nav-link beep beep-sidebar" href="components-hero.html">Hero</a></li>                <li><a class="nav-link" href="components-multiple-upload.html">Multiple Upload</a></li>
-                <li><a class="nav-link beep beep-sidebar" href="components-pricing.html">Pricing</a></li>                <li><a class="nav-link" href="components-statistic.html">Statistic</a></li>                <li><a class="nav-link" href="components-tab.html">Tab</a></li>
-                <li><a class="nav-link" href="components-table.html">Table</a></li>
-                <li><a class="nav-link" href="components-user.html">User</a></li>                <li><a class="nav-link beep beep-sidebar" href="components-wizard.html">Wizard</a></li>              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="forms-advanced-form.html">Advanced Form</a></li>
-                <li><a class="nav-link" href="forms-editor.html">Editor</a></li>
-                <li><a class="nav-link" href="forms-validation.html">Validation</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
-                <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
-                <li><a href="gmaps-geocoding.html">Geocoding</a></li>
-                <li><a href="gmaps-geolocation.html">Geolocation</a></li>
-                <li><a href="gmaps-marker.html">Marker</a></li>
-                <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
-                <li><a href="gmaps-route.html">Route</a></li>
-                <li><a href="gmaps-simple.html">Simple</a></li>
-              </ul>
-            </li>            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Modules</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="modules-calendar.html">Calendar</a></li>
-                <li><a class="nav-link" href="modules-chartjs.html">ChartJS</a></li>
-                <li><a class="nav-link" href="modules-datatables.html">DataTables</a></li>
-                <li><a class="nav-link" href="modules-flag.html">Flag</a></li>
-                <li><a class="nav-link" href="modules-font-awesome.html">Font Awesome</a></li>
-                <li><a class="nav-link" href="modules-ion-icons.html">Ion Icons</a></li>
-                <li><a class="nav-link" href="modules-owl-carousel.html">Owl Carousel</a></li>
-                <li><a class="nav-link" href="modules-sparkline.html">Sparkline</a></li>
-                <li><a class="nav-link" href="modules-sweet-alert.html">Sweet Alert</a></li>
-                <li><a class="nav-link" href="modules-toastr.html">Toastr</a></li>
-                <li><a class="nav-link" href="modules-vector-map.html">Vector Map</a></li>
-                <li><a class="nav-link" href="modules-weather-icon.html">Weather Icon</a></li>
-              </ul>
-            </li>
-            <li class="menu-header">Pages</li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="auth-forgot-password.html">Forgot Password</a></li>
-                <li><a href="auth-login.html">Login</a></li>
-                <li><a href="auth-register.html">Register</a></li>
-                <li><a href="auth-reset-password.html">Reset Password</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-exclamation"></i> <span>Errors</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="errors-503.html">503</a></li>
-                <li><a class="nav-link" href="errors-403.html">403</a></li>
-                <li><a class="nav-link" href="errors-404.html">404</a></li>
-                <li><a class="nav-link" href="errors-500.html">500</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-bicycle"></i> <span>Features</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="features-activities.html">Activities</a></li>
-                <li><a class="nav-link" href="features-post-create.html">Post Create</a></li>
-                <li><a class="nav-link" href="features-posts.html">Posts</a></li>
-                <li><a class="nav-link" href="features-profile.html">Profile</a></li>
-                <li><a class="nav-link" href="features-settings.html">Settings</a></li>
-                <li><a class="nav-link" href="features-setting-detail.html">Setting Detail</a></li>
-                <li><a class="nav-link" href="features-tickets.html">Tickets</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i> <span>Utilities</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="utilities-contact.html">Contact</a></li>
-                <li><a class="nav-link" href="utilities-invoice.html">Invoice</a></li>
-                <li><a href="utilities-subscribe.html">Subscribe</a></li>
-              </ul>
-            </li>            <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
-          </ul>
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-          <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-            <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-              <i class="fas fa-rocket"></i> Documentation
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-speedometer2"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-grid"></i><span>Category</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('category.category')}}">
+              <i class="bi bi-collection-fill"></i><span>All Category</span>
             </a>
-          </div>        </aside>
-      </div>
+          </li>
+          <li>
+            <a href="{{ route('category.create')}}">
+              <i class="bi bi-bag-plus"></i><span>Add Category</span>
+            </a>
+          </li>
+
+        </ul>
+      </li><!-- End Components Nav -->
+        <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav" href="{{ route('brand.index')}}">
+                <i class="bi bi-journal-text"></i><span>Brands</span>
+                </a>
+            </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="forms-elements.html">
+              <i class="bi bi-circle"></i><span>Form Elements</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-layouts.html">
+              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-editors.html">
+              <i class="bi bi-circle"></i><span>Form Editors</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-validation.html">
+              <i class="bi bi-circle"></i><span>Form Validation</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="tables-general.html">
+              <i class="bi bi-circle"></i><span>General Tables</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-data.html">
+              <i class="bi bi-circle"></i><span>Data Tables</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="charts-chartjs.html">
+              <i class="bi bi-circle"></i><span>Chart.js</span>
+            </a>
+          </li>
+          <li>
+            <a href="charts-apexcharts.html">
+              <i class="bi bi-circle"></i><span>ApexCharts</span>
+            </a>
+          </li>
+          <li>
+            <a href="charts-echarts.html">
+              <i class="bi bi-circle"></i><span>ECharts</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Charts Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="icons-bootstrap.html">
+              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-remix.html">
+              <i class="bi bi-circle"></i><span>Remix Icons</span>
+            </a>
+          </li>
+          <li>
+            <a href="icons-boxicons.html">
+              <i class="bi bi-circle"></i><span>Boxicons</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+
+      <li class="nav-heading">Pages</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-faq.html">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-contact.html">
+          <i class="bi bi-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-register.html">
+          <i class="bi bi-card-list"></i>
+          <span>Register</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-error-404.html">
+          <i class="bi bi-dash-circle"></i>
+          <span>Error 404</span>
+        </a>
+      </li><!-- End Error 404 Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-blank.html">
+          <i class="bi bi-file-earmark"></i>
+          <span>Blank</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+    </ul>
+
+  </aside>
