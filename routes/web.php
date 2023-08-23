@@ -44,3 +44,9 @@ Route::group(['middleware' => 'auth', 'admin'], function(){
     Route::get('/dashboard/brand', 'App\Http\Controllers\BrandShowcontroller@index')->name('brand.index');
 
 });
+
+Route::group(['middleware' => 'auth', 'admin'], function(){
+    Route::get('/dashboard/product', 'App\Http\Controllers\Admin\productController@index')->name('product.index');
+    Route::get('/dashboard/product/create', 'App\Http\Controllers\Admin\productController@create')->name('product.create');
+    Route::post('/dashboard/product/store', 'App\Http\Controllers\Admin\productController@store')->name('product.store');
+});

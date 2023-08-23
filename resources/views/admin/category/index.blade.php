@@ -3,7 +3,7 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header mt-2">
-            <h1>Categories</h1>
+            <h1>Categories <a href="{{ route('category.create')}}" class="btn btn-primary float-end">Add Category</a></h1>
             <div class="section-header-breadcrumb d-flex mt-2">
                 <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a>
                 </div>
