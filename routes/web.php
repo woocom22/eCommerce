@@ -49,4 +49,8 @@ Route::group(['middleware' => 'auth', 'admin'], function(){
     Route::get('/dashboard/product', 'App\Http\Controllers\Admin\productController@index')->name('product.index');
     Route::get('/dashboard/product/create', 'App\Http\Controllers\Admin\productController@create')->name('product.create');
     Route::post('/dashboard/product/store', 'App\Http\Controllers\Admin\productController@store')->name('product.store');
+    Route::get('/dashboard/product/{product}/edit', 'App\Http\Controllers\Admin\productController@edit')->name('product.edit');
+    Route::put('/dashboard/product/{product}', 'App\Http\Controllers\Admin\productController@update')->name('product.update');
+    Route::get('/dashboard/product/{product_id}/delete', 'App\Http\Controllers\Admin\productController@productDelete')->name('product.productDelete');
+    Route::get('/dashboard/product-image/{product_image_id}/delete', 'App\Http\Controllers\Admin\productController@destroyImage')->name('product.destroyImage');
 });

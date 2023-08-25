@@ -38,7 +38,7 @@ class productFormRequest extends FormRequest
         ],
         'brand'=> [
             'required',
-            'integer'
+            'string'
         ],
         'smaill_description'=> [
             'required',

@@ -28,6 +28,10 @@ class product extends Model
         'meta_keyword',
         'meta_description'
     ];
+    public function category(){
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
+
     public function productImage(){
         return $this->hasMany(productImage::class, 'product_id', 'id');
     }
