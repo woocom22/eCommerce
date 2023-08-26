@@ -33,6 +33,14 @@
                  <i class="bi bi-journal-text"></i><span>Brands</span>
              </a>
          </li>
+         {{-- Color Menu  --}}
+         <li class="nav-item">
+             <a class="nav-link collapsed" data-bs-target="#forms-nav"
+                 href="{{ route('color.index') }}">
+                 <i class="bi bi-journal-text"></i><span>Colors</span>
+             </a>
+         </li>
+         {{-- End Color menu --}}
 
          {{-- Product Menu --}}
             <li class="nav-item">

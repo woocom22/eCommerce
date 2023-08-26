@@ -12,7 +12,9 @@
                     </div>
                     <!-- /resources/views/post/create.blade.php -->
                         @if (session('message'))
-                            <h4 class="alert alert-success ms-4" style="width: 50%">{{ session('message') }}</h4>
+                        <div class="alert alert-success alert-dismissible fade show ms-4" style="width: 60%" role="alert">
+                            <strong>{{session('message')}}</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
                         @endif
                         @if ($errors->any())
                             <div class="alert alert-danger">

@@ -7,6 +7,7 @@ use App\Http\Livewire\Admin\Brand\Index;
 use App\Http\Controllers\admincontroller;
 use App\Http\Controllers\Brandcontroller;
 use App\Http\Controllers\BrandShowcontroller;
+use App\Models\product;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,9 @@ Route::group(['middleware' => 'auth', 'admin'], function(){
 });
 
 Route::group(['middleware' => 'auth', 'admin'], function(){
+
+    // for product
+
     Route::get('/dashboard/product', 'App\Http\Controllers\Admin\productController@index')->name('product.index');
     Route::get('/dashboard/product/create', 'App\Http\Controllers\Admin\productController@create')->name('product.create');
     Route::post('/dashboard/product/store', 'App\Http\Controllers\Admin\productController@store')->name('product.store');
@@ -53,4 +57,14 @@ Route::group(['middleware' => 'auth', 'admin'], function(){
     Route::put('/dashboard/product/{product}', 'App\Http\Controllers\Admin\productController@update')->name('product.update');
     Route::get('/dashboard/product/{product_id}/delete', 'App\Http\Controllers\Admin\productController@productDelete')->name('product.productDelete');
     Route::get('/dashboard/product-image/{product_image_id}/delete', 'App\Http\Controllers\Admin\productController@destroyImage')->name('product.destroyImage');
+
+    // For color controller
+    Route::get('/dashboard/color', 'App\Http\Controllers\Admin\colorController@index')->name('color.index');
+    Route::get('/dashboard/color/create', 'App\Http\Controllers\Admin\colorController@create')->name('color.create');
+    Route::post('/dashboard/color', 'App\Http\Controllers\Admin\colorController@store')->name('color.store');
+    Route::get('/dashboard/color/{color}/edit', 'App\Http\Controllers\Admin\colorController@edit')->name('color.edit');
+    Route::put('/dashboard/color/{color_id}', 'App\Http\Controllers\Admin\colorController@update')->name('color.update');
+    Route::get('/dashboard/color/{color_id}/delete', 'App\Http\Controllers\Admin\colorController@destroy')->name('color.destroy');
+
+
 });

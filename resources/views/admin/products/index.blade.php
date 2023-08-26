@@ -5,7 +5,10 @@
     <div class="row">
         <div class="col-md-12">
             @if (session()->has('message'))
-                <h5 class="alert alert-success m-4">{{session('message')}}</h5>
+
+            <div class="alert alert-primary alert-dismissible fade show ms-4" style="width: 60%" role="alert">
+                <strong>{{session('message')}}</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
             @endif
             <div class="card">
                 <div class="card">
