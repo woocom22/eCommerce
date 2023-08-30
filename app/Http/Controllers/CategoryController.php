@@ -27,7 +27,7 @@ class CategoryController extends Controller
     public function delete($id){
         $model = category::findOrFail($id);
         $model->delete();
-        return redirect()->route('category.category')->with('message', 'Category Delete Successfully');
+        return redirect()->route('category.category')->with('message', 'Category Deleted Successfully');
     }
     public function edit($id){
         $model = category::findOrFail($id);
@@ -39,7 +39,7 @@ class CategoryController extends Controller
         $model->slug = Str::slug($request->name);
         $model->status = $request->status;
         $model->save();
-        return redirect()->route('category.category')->with('message', 'Category Delete Successfully');
+        return redirect()->route('category.category')->with('message', 'Category Updated Successfully');
     }
 
 }

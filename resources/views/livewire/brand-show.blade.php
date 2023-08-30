@@ -15,9 +15,13 @@
                             </h2>
                         </div>
                         <div>
-                            @if (session()->has('message'))
-                                <h5 class="alert alert-success m-4">{{session('message')}}</h5>
-                            @endif
+                        @if(session()->has('message'))
+
+                            <div class="alert alert-primary alert-dismissible fade show mx-4" role="alert">
+                                <strong>{{ session('message') }}</strong><button type="button"
+                                    class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
                         </div>
                         <div class="card-body">
                             <table class="table">

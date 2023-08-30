@@ -14,7 +14,13 @@
         <div class="card">
             <div class="card-body">
               <h5 class="card-title">Category Table</h5>
+                @if(session()->has('message'))
 
+                <div class="alert alert-primary alert-dismissible fade show mx-4" role="alert">
+                    <strong>{{ session('message') }}</strong><button type="button"
+                        class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
               <!-- Table Variants -->
               <table class="table">
                 <thead>

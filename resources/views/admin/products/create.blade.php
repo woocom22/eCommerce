@@ -12,7 +12,7 @@
                     </div>
                     <!-- /resources/views/post/create.blade.php -->
 
-                        <h1>Create Post</h1>
+                        <h4 class="mx-4">Add Product Details</h4>
 
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -33,7 +33,7 @@
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                     data-bs-target="#home-tab-pane" type="button" role="tab"
                                     aria-controls="home-tab-pane" aria-selected="true">
-                                    Home
+                                    Product Details
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -47,7 +47,7 @@
                                 <button class="nav-link" id="details-tab" data-bs-toggle="tab"
                                     data-bs-target="#details-tab-pane" type="button" role="tab"
                                     aria-controls="details-tab-pane" aria-selected="false">
-                                    Details
+                                    Price & Quantity
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -55,6 +55,13 @@
                                     data-bs-target="#image-tab-pane" type="button" role="tab"
                                     aria-controls="image-tab-pane" aria-selected="false">
                                     Product Image
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="color-tab" data-bs-toggle="tab"
+                                    data-bs-target="#color-tab-pane" type="button" role="tab"
+                                    aria-controls="color-tab-pane" aria-selected="false">
+                                    Product Color
                                 </button>
                             </li>
 
@@ -147,6 +154,27 @@
                                     <input type="file" multiple name="image[]" class="form-control">
                                 </div>
 
+                            </div>
+                            <div class="tab-pane fade" id="color-tab-pane" role="tabpanel"
+                                aria-labelledby="color-tab" tabindex="0">
+                                <div class="md-3 mt-2">
+                                    <label for="">Select Color</label>
+                                        <div class="row">
+                                        @forelse ($Colors as $coloritem)
+                                            <div class="col-md-3">
+                                                <div class="p-2 border mb-2">
+                                                Color: <input type="checkbox" name="color[ {{ $coloritem->id}} ]" value="{{ $coloritem->id}}">{{ $coloritem->name }}
+                                                <br>
+                                                Quantity: <input type="number" name="colorQuantity[{{ $coloritem->id}}]" style="border: 1px solid; width:75px" />
+                                            </div>
+                                            </div>
+                                        @empty
+                                            <md-3>
+                                                <h4>No Color Avilable</h4>
+                                            </md-3>
+                                        @endforelse
+                                    </div>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary mt-4">Submit</button>
                         </div>

@@ -28,8 +28,13 @@
                                     <input type="text" name="code" class="form-control">
                                 </div>
                                 <div class="md-3 mt-2">
-                                    <label for="">Status</label>
-                                    <input type="checkbox" name="status" />
+                                    <select class="form-control" name="status" id="inputEmail4"
+                                        aria-label="Default select example">
+                                        <label for="">Color Status</label>
+                                        <option selected>Choose Status</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </select>
                                 </div>
 
                             <button type="submit" class="btn btn-primary mt-4">Save Color</button>

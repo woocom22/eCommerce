@@ -34,8 +34,7 @@
                                          <td>{{ $color->id }}</td>
                                          <td>{{ $color->name }}</td>
                                          <td>{{ $color->code }}</td>
-                                        <td>{{ $color->status = '1' ? 'Hidden':'Visible' }}
-                                        </td>
+                                        <td>{{ $color->status }}</td>
                                         <td class="">
                                             <a
                                                 href="{{ url('dashboard/color/'.$color->id.'/edit')}}"><i

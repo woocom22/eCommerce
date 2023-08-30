@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Brand;
+use App\Models\color;
 use App\Models\product;
 use App\Models\category;
 use Illuminate\Support\Str;
@@ -16,12 +17,14 @@ class productController extends Controller
 {
     public function index(){
         $products = product::all();
-        return view('admin.products.index', compact('products'));
+
+        return view('admin.products.index', compact('products' ));
     }
     public function create(){
         $categories = Category::all();
         $brands = Brand::all();
-        return view('admin.products.create', compact('categories', 'brands'));
+        $Colors = color::where('status', 'Active')->get();
+        return view('admin.products.create', compact('categories', 'brands', 'Colors'));
     }
 
     public function store(productFormRequest $request){
@@ -60,6 +63,18 @@ class productController extends Controller
                 ]);
             }
         }
+
+        if($request->color){
+            foreach($request->color as $key => $color){
+                $product->productColors()->create([
+                    'product_id' => $product->id,
+                    'color_id' => $color,
+                    'quantity' => $request->colorQuantity[$key] ?? 0
+                    // dd($request->all())
+                ]);
+            }
+        }
+
 
         return redirect()->route('product.index')->with('message', 'Product Added Successfully.');
     }
@@ -109,7 +124,7 @@ class productController extends Controller
 
             return redirect()->route('product.index')->with('message', 'Product Updated Successfully.');
         }else{
-            return redirect()->wiht('message', 'No Search Porudct Fund.');
+            return redirect('dashboard/product')->with('message', 'No Search Porudct Fund.');
         }
     }
 
