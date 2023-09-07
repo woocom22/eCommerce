@@ -42,6 +42,15 @@
          </li>
          {{-- End Color menu --}}
 
+          {{-- Slider Menu  --}}
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav"
+                href="{{ route('slider.index')}}">
+                <i class="bi bi-journal-text"></i><span>Sliders</span>
+            </a>
+        </li>
+        {{-- End Slider menu --}}
+
          {{-- Product Menu --}}
             <li class="nav-item">
              <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">

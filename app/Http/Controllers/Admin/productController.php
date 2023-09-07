@@ -82,7 +82,11 @@ class productController extends Controller
         $categories = Category::all();
         $brands = Brand::all();
         $product = product::findOrFail($product_id);
-        return view('admin.products.edit', compact('categories', 'brands', 'product'));
+
+        $product_colors = $product->productColors->pluck('color_id')->toArray();
+        $Colors = color::whereNotIn('id', $product_colors)->get();
+
+        return view('admin.products.edit', compact('categories', 'brands', 'product', 'Colors'));
     }
     public function update(productFormRequest $request, int $product_id){
         $validatedData = $request->validated();
@@ -151,4 +155,5 @@ class productController extends Controller
         return redirect()->back()->with('message', 'Product Deleted with all images.');
 
     }
-}
+
+    }

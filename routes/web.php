@@ -66,5 +66,12 @@ Route::group(['middleware' => 'auth', 'admin'], function(){
     Route::put('/dashboard/color/{color_id}', 'App\Http\Controllers\Admin\colorController@update')->name('color.update');
     Route::get('/dashboard/color/{color_id}/delete', 'App\Http\Controllers\Admin\colorController@destroy')->name('color.destroy');
 
+    // Route::post('/product-color/{pro_color_id}', 'App\Http\Controllers\Admin\colorController@ProductColorQty');
+
+    // for slider
+    Route::get('/dashboard/slider', 'App\Http\Controllers\Admin\SliderController@index')->name('slider.index');
+    Route::get('/dashboard/slider/create', 'App\Http\Controllers\Admin\SliderController@create')->name('slider.create');
+    Route::post('/dashboard/slider/store', 'App\Http\Controllers\Admin\SliderController@store')->name('slider.store');
+
 
 });
