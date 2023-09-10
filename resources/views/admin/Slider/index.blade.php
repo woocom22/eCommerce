@@ -29,23 +29,23 @@
                             </thead>
                             <tbody>
 
-                               @forelse($sliers as $slier)
+                               @forelse($sliders as $slider)
                                         <tr>
-                                            <td>{{ $slier->id }}</td>
+                                            <td>{{ $slider->id }}</td>
                                             {{-- <td>
-                                                @if ($sliers->category)
-                                                {{ $sliers->category->name }}
+                                                @if ($slider->category)
+                                                {{ $slider->category->name }}
                                                 @else
                                                     No Category.
                                                 @endif
                                             </td> --}}
-                                            <td>{{ $slier->title }}</td>
-                                            <td>{{ $slier->description }}</td>
-                                            <td><img src="{{ asset( "$slier->image" ) }}" style="width:70px; height:70px" alt=""></td>
-                                            <td>{{ $slier->status }}</td>
+                                            <td>{{ $slider->title }}</td>
+                                            <td>{{ $slider->description }}</td>
+                                            <td><img src="{{ asset( "$slider->image" ) }}" style="width:70px; height:70px" alt="" /></td>
+                                            <td>{{ $slider->status }}</td>
                                             <td class="">
-                                                <a href=""><i class="bi bi-pencil-square"></i></a>
-                                                <a href="" onclick="return confirm('Are you sure, you want to delete the porduct.')"><i class="bi bi-trash-fill text-danger"></i></a>
+                                                <a href="{{ route('slider.edit', $slider->id )}}"><i class="bi bi-pencil-square"></i></a>
+                                                <a href="{{ route('slider.delete', $slider->id )}}" onclick="return confirm('Are you sure, you want to delete the porduct.')"><i class="bi bi-trash-fill text-danger"></i></a>
                                             </td>
                                         </tr>
                                         @empty

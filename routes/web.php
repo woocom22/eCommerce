@@ -72,6 +72,9 @@ Route::group(['middleware' => 'auth', 'admin'], function(){
     Route::get('/dashboard/slider', 'App\Http\Controllers\Admin\SliderController@index')->name('slider.index');
     Route::get('/dashboard/slider/create', 'App\Http\Controllers\Admin\SliderController@create')->name('slider.create');
     Route::post('/dashboard/slider/store', 'App\Http\Controllers\Admin\SliderController@store')->name('slider.store');
+    Route::get('/dashboard/slider/{slider}/edit', 'App\Http\Controllers\Admin\SliderController@edit')->name('slider.edit');
+    Route::put('/dashboard/slider/{slider}', 'App\Http\Controllers\Admin\SliderController@update')->name('slider.update');
+    Route::get('/dashboard/slider/{slider}/delete', 'App\Http\Controllers\Admin\SliderController@delete')->name('slider.delete');
 
 
 });
