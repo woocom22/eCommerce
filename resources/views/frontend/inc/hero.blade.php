@@ -1,27 +1,7 @@
     <section class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>All departments</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
-                        </ul>
-                    </div>
-                </div>
+                @include('frontend.inc.heroCategory')
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
@@ -42,16 +22,42 @@
                                 <h5>+65 11.188.888</h5>
                                 <span>support 24/7 time</span>
                             </div>
-                        </div>
+                          </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="{{ asset('frontend/assets/img/hero/banner.jpg') }}">
-                        <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                    {{-- Slider area start  --}}
+
+
+
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach ($sliders as $key => $slider)
+                          <div class="carousel-item {{$key == 0 ? 'active':''}} ">
+                            @if ($slider->image)
+                            <div class="hero__item set-bg" data-setbg="{{ asset($slider->image) }}">
+                                @endif
+                                <div class="hero__text">
+                                    <span>FRUIT FRESH</span>
+                                    <h2>{{ $slider->title }}</h2>
+                                    <p>{{ $slider->description }}</p>
+                                    <a href="#" class="primary-btn">SHOP NOW</a>
+                                </div>
+                            </div>
+                          </div>
+                          @endforeach
+
                         </div>
-                    </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    {{-- Slider area end  --}}
+
+
                 </div>
             </div>
         </div>

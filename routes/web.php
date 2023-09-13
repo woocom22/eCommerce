@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Slider;
+use App\Models\product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -7,7 +9,6 @@ use App\Http\Livewire\Admin\Brand\Index;
 use App\Http\Controllers\admincontroller;
 use App\Http\Controllers\Brandcontroller;
 use App\Http\Controllers\BrandShowcontroller;
-use App\Models\product;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,8 @@ use App\Models\product;
 */
 
 Route::get('/', function () {
-    return view('frontend.index');
+    $sliders = Slider::where('status', 'Active')->get();
+    return view('frontend.index', compact('sliders'));
 });
 
 Auth::routes();
