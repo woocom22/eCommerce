@@ -28,7 +28,7 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                @guest()
+                                 @guest()
                                 <ul><a href="{{ route('login')}}"><i class="fa fa-user"></i> Login </a></ul>
                                 <ul class="auth_calss_left"><a href="{{ route('register')}}"><i class="fa fa-user"></i> Register </a></ul>
                                  @else
@@ -55,23 +55,68 @@
                         <a href="./index.html"><img src="{{ asset('frontend/assets/img/logo.png') }}" alt=""></a>
                     </div>
                 </div>
+
+                {{-- Start menu old --}}
                 <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
+
+                     {{-- Start menu New --}}
+                <nav class="navbar navbar-expand-lg navbar-light header__menu">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('home')}}">Home <span class="sr-only">(current)</span></a>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+
+                            @guest
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">Registration</a>
+                            </li>
+
+                            @else
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Profile
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item px-3" href="#"><i class="fa fa-user "
+                                            aria-hidden="true"></i><span> {{ Auth::user()->name }}</span> </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item px-3" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                                        </svg>Accountin Settings</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item px-3" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i>{{ __('Logout') }}</a>
+                                    <form id="logout-form" action="{{ route('logout') }}"
+                                        method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @endguest
+
                         </ul>
-                    </nav>
+
+                        {{-- search option --}}
+                        {{-- <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                       --}}
+                    </div>
+                </nav>
+                {{-- End menu New --}}
                 </div>
                 <div class="col-lg-3">
                     <div class="header__cart">
@@ -82,6 +127,7 @@
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
                 </div>
+
             </div>
             <div class="humberger__open">
                 <i class="fa fa-bars"></i>
