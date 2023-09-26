@@ -80,3 +80,5 @@ Route::group(['middleware' => 'auth', 'admin'], function(){
 
 
 });
+
+Route::get('/collection', 'App\Http\Controllers\frontednController@collection')->name('category.collection');

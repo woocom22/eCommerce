@@ -229,14 +229,6 @@
     </nav><!-- End Icons Navigation -->
 
   </header>
-
-
-
-
-
-
-
-
    {{-- Start menu New --}}
    <nav class="navbar navbar-expand-lg navbar-light floar-end">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
